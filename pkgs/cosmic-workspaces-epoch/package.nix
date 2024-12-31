@@ -4,7 +4,6 @@
   fetchFromGitHub,
   libcosmicAppHook,
   pkg-config,
-  libgbm ? null,
   libinput,
   mesa,
   udev,
@@ -30,7 +29,7 @@ rustPlatform.buildRustPackage {
     pkg-config
   ];
   buildInputs = [
-    (if libgbm != null then libgbm else mesa)
+    mesa
     libinput
     udev
   ];

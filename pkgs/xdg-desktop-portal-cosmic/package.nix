@@ -4,7 +4,6 @@
   fetchFromGitHub,
   libcosmicAppHook,
   pkg-config,
-  libgbm ? null,
   mesa,
   pipewire,
   gst_all_1,
@@ -33,7 +32,7 @@ rustPlatform.buildRustPackage rec {
     pkg-config
   ];
   buildInputs = [
-    (if libgbm != null then libgbm else mesa)
+    mesa
     pipewire
   ];
   checkInputs = [ gst_all_1.gstreamer ];
